@@ -10,10 +10,12 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   // Solution code here...
-  this.arr=[1,2,3,4,5];
-  arr.forEach((value,idx)=>{
-    if(value=value+1){console.log(value);}
+  let array=[];
+  arr.forEach((value)=>{
+    // if(value=value+1){array.push(value);}
+    array.push(value+1);
   });
+  return array;
 };
 addOne();
 /* ------------------------------------------------------------------------------------------------
@@ -26,13 +28,15 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
-  let array=['hi', 'how', 'are', 'you'];
-  array.forEach((value,idx)=>{
-    if(value=value+'!'){console.log(value);}
+  let array=[];
+  arr.forEach((value)=>{
+    // if(value=value+'!'){array.push(value);}
+    array.push(value+'!');
   }
 
-  );
-};addExclamation();
+  );return array;
+};
+addExclamation();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -44,10 +48,11 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  let array=['hi', 'how', 'are', 'you'];
-  array.forEach((value,idx)=>{
-    if (value=value.toUpperCase()){console.log(value);}
-  });
+  let array=[];
+  arr.forEach((value)=>{
+    // if (value=value.toUpperCase()){array.push(value);}
+    array.push(value.toUpperCase());
+  }); return array;
 };allUpperCase();
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,21 +66,24 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let array=['hello', '301', 'students'];
+  let array=[];
   // Solution code here...
-  array.forEach((value,idx)=>{
-    if(value=value.toUpperCase()+'!'){console.log(value);}
+  word.forEach((value)=>{
+    // if(value=value.toUpperCase()+'!'){array.push(value);}
+    array.push(value.toUpperCase()+'!');
   });
+  return array;
 };greeting();
 
 const speaker = (words, callback) => {
   // Solution code here...
-  let array=(['hello', '301', 'students'],greeting());
+  let array=[];
 
-  array.forEach((value,idx)=>{
-    if(value=greeting())
-    {console.log(value);}
+  words.forEach((value)=>{
+    // if(value=greeting())
+    array.push(callback(value));
   });
+  return array;
 };
 speaker();
 /* ------------------------------------------------------------------------------------------------
@@ -94,13 +102,19 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
-  // Solution code here...
-};
+const addValues = (arr, value) => { arr.push(value);};
+
+// Solution code here...
+
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
+addNumbers();
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -121,7 +135,12 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
+  let array=[];
+  availableItems.forEach(value=>{
+    if(value.available){array.push(value.name);}
+  });
   // Solution code here...
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
