@@ -10,14 +10,12 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   // Solution code here...
-  let array=[];
-  arr.forEach((value)=>{
-    // if(value=value+1){array.push(value);}
-    array.push(value+1);
+
+  const answer = [];
+  arr.forEach(inputs => {answer.push(inputs +1);
   });
-  return array;
+  return answer;
 };
-addOne();
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -28,15 +26,14 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
-  let array=[];
+  let arrayExcl=[];
   arr.forEach((value)=>{
     // if(value=value+'!'){array.push(value);}
-    array.push(value+'!');
-  }
-
-  );return array;
+    arrayExcl.push(value+'!');
+  });
+  return arrayExcl;
 };
-addExclamation();
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -48,12 +45,12 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
-  let array=[];
+  let arrayUpp=[];
   arr.forEach((value)=>{
     // if (value=value.toUpperCase()){array.push(value);}
-    array.push(value.toUpperCase());
-  }); return array;
-};allUpperCase();
+    arrayUpp.push(value.toUpperCase());
+  }); return arrayUpp;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -66,26 +63,22 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let array=[];
-  // Solution code here...
-  word.forEach((value)=>{
-    // if(value=value.toUpperCase()+'!'){array.push(value);}
-    array.push(value.toUpperCase()+'!');
-  });
-  return array;
-};greeting();
+  let newWord = word.toUpperCase() + '!';
+  return newWord;
+  }
+  
 
 const speaker = (words, callback) => {
   // Solution code here...
-  let array=[];
+  let arraySpeak=[];
 
   words.forEach((value)=>{
     // if(value=greeting())
-    array.push(callback(value));
+    arraySpeak.push(callback(value));
   });
-  return array;
+  return arraySpeak;
 };
-speaker();
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -114,7 +107,7 @@ const addNumbers = (num, arr, times, callback) => {
   }
   return arr;
 };
-addNumbers();
+
 
 /* ------------------------------------------------------------------------------------------------
 
