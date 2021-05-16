@@ -22,12 +22,15 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  const newArr=[];
-  arr.map(item=>newArr.push(callback(item)));
-  return newArr;
+  const Arr=[];
+  arr.map(str=>Arr.push(callback(str)));
+  return Arr;
   // Solution code here...
 };
 
+// const newArr=[];
+// arr.map(item=>newArr.push(callback(item)));
+// return newArr;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -37,6 +40,7 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
+  // return arr.sort();
   return arr.sort();
   // Solution code here...
 
@@ -50,7 +54,10 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbers = (arr) => arr.sort((a, b) => a - b);
+const sortNumbers = (arr) => {
+  return arr.sort((a,b)=>a-b);
+}
+// arr.sort((a, b) => a - b);
 
 // Solution code here...
 
@@ -63,7 +70,10 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => arr.sort((a, b) => b - a);
+const sortBackwards = (arr) => {
+  return arr.sort((a,b)=>b-a)
+}
+// arr.sort((a, b) => b - a);
 // Solution code here...
 
 
@@ -95,7 +105,10 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => arr.sort((a,b)=>a.price-b.price);
+const sortByPrice = (arr) =>{
+  return arr.sort((a,b)=>a.price-b.price)
+}
+//  arr.sort((a,b)=>a.price-b.price);
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,6 +130,8 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
+  return arr.sort((a,b)=>a.toLowerCase-b);
+
   // Solution code here...
 };
 

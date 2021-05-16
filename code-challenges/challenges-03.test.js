@@ -26,7 +26,11 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) =>arr.filter(num=> typeof(num)==='number');
+const typeNum = (arr)=>{
+  return( arr.filter(str=>(typeof(str)==='number'))); // Solution code here...
+};
+
+
 // Solution code here...
 
 
@@ -53,9 +57,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  return(arr.filter(num=>num%2!==0));
+  return(arr.filter(num=>(num%2 !==0)))
+}
+// arr.filter(num=>num%2!==0);
   // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -66,8 +71,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-  return(arr.filter(num=>!forbiddenValues.includes(num)))
+return(arr.filter(num=>(!forbiddenValues.includes(num))))  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
